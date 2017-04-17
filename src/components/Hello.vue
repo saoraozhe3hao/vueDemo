@@ -1,15 +1,22 @@
 <template>
   <div class="hello">
-    <!--属性绑定，条件判断, html绑定--><!--属性绑定缩写 :title-->
-    <h1 v-bind:title="title" v-if="show" v-html="msg"></h1>
+    <!--属性绑定，条件判断, html绑定-->
+    <!--属性绑定缩写 :title-->
+    <h1 v-bind:title="title" v-show="show" v-html="msg"></h1>
     <ul>
-      <!--循环，key，参数传递-->
-      <Item v-for="option in list" :key="option.key" v-bind:option="option"></Item>
+      <!--循环，key，参数传递，自定义事件，子组件索引-->
+      <Item v-for="option in list" :key="option.key" v-bind:op-item="option"  v-on:success="on" ref="item">
+          <!--将内容分发到子组件中名称为slot-name的slot-->
+          <span slot="slot-name">{{option.key}}</span>
+      </Item>
       <!--计算属性-->
       <li>{{reversedMessage}}</li>
     </ul>
-    <!--事件绑定，事件修饰符，内容绑定--><!--事件绑定缩写 @click-->
+    <!--事件绑定，事件修饰符，内容绑定-->
+    <!--事件绑定缩写 @click-->
     <button v-on:click.prevent="reverse">{{ '逆转消息' }}</button>
+    <!-- 双向绑定，绑定修饰符-->
+    <input type="text" v-model.trim="msg"/>
   </div>
 </template>
 
@@ -29,6 +36,10 @@ export default {
   methods: {
     reverse: function () {
       this.msg = this.msg.split('').reverse().join('')
+      this.show = !this.show
+    },
+    on: function () {
+      console.log('on')
     }
   },
   created: function () {

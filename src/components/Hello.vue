@@ -1,8 +1,11 @@
 <template>
   <div class="hello">
-    <!--属性绑定，条件判断, html绑定-->
-    <!--属性绑定缩写 :title-->
-    <h1 v-bind:title="title" v-show="show" v-html="msg"></h1>
+    <!--过渡，需定义样式-->
+    <transition name="fade">
+      <!--属性绑定，条件判断, html绑定-->
+      <!--属性绑定缩写 :title-->
+      <h1 v-bind:title="title" v-show="show" v-html="msg"></h1>
+    </transition>
     <ul>
       <!--循环，key，参数传递，自定义事件，子组件索引-->
       <Item v-for="option in list" :key="option.key" v-bind:op-item="option"  v-on:success="on" ref="item">
@@ -17,13 +20,13 @@
     <button v-on:click.prevent="reverse">{{ '逆转消息' }}</button>
     <!-- 双向绑定，绑定修饰符-->
     <input type="text" v-model.trim="msg"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Item from './Item'
 export default {
-  name: 'hello',  // 组件名
   components: {Item}, // 列举引用的组件
   data () {
     return {
@@ -69,8 +72,8 @@ export default {
 }
 </script>
 
-  <!-- scoped 使得样式只应用在当前component -->
-<style scoped>
+  <!-- scoped 使得样式只应用在当前component， 要使用less需安装less 和 less-loader-->
+<style scoped lang="less">
 h1, h2 {
   font-weight: normal;
 }
@@ -78,14 +81,19 @@ h1, h2 {
 ul {
   list-style-type: none;
   padding: 0;
+  li {
+   display: inline-block;
+   margin: 0 10px;
+  }
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 a {
   color: #42b983;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 </style>

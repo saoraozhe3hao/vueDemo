@@ -7,7 +7,6 @@
 
 <script>
 export default {
-  name: 'item',
   props: ['opItem'],  // 作为子组件 接受的参数，协力写成驼峰式camelCased，父组件中写成短杠式kebab-case
   data: function () {
     return {}

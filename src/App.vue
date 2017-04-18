@@ -1,12 +1,14 @@
 <template>
   <div id="app">
+    <router-link to="/world/1">带参路由</router-link>
+    <router-link to="/world">嵌套路由</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app' // 组件名
 }
 </script>
 

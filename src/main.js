@@ -13,3 +13,6 @@ new Vue({
   template: '<App/>',             // 用template填充el
   components: { App: App }        // 列举 component，用于 template
 })
+
+// 中央事件总线，用于非父子关系组件之间的通讯
+window.bus = new Vue()

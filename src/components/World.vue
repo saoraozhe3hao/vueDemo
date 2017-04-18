@@ -11,6 +11,9 @@
 export default {
   methods: {
     jump: function () {
+      // 广播事件
+      window.bus.$emit('event-name', 1)
+      // 跳转
       this.$router.push({path: '/world/2', query: {name: 'tom'}})
     }
   },
@@ -26,7 +29,6 @@ export default {
   watch: {
     // 监听路由变化
     '$route' (to, from) {
-
     }
   }
 }

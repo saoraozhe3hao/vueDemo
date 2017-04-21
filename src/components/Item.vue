@@ -12,7 +12,7 @@ export default {
     return {}
   },
   methods: {
-    over: function () {
+    over () {
       // 触发自定义事件
       this.$emit('success')
     }

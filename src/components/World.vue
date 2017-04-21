@@ -10,7 +10,7 @@
 <script>
 export default {
   methods: {
-    jump: function () {
+    jump () {
       // 广播事件
       window.bus.$emit('event-name', 1)
       // 跳转
@@ -19,10 +19,10 @@ export default {
   },
   // 计算属性
   computed: {
-    routeParam: function () {
+    routeParam () {
       return JSON.stringify(this.$route.params)
     },
-    routeQuery: function () {
+    routeQuery () {
       return JSON.stringify(this.$route.query)
     }
   },

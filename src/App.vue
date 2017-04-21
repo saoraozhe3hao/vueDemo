@@ -2,6 +2,7 @@
   <div id="app">
     <router-link to="/world/1">带参路由</router-link>
     <router-link to="/world">嵌套路由</router-link>
+    <router-link to="/asyn">懒加载组件</router-link>
     <router-view></router-view>
   </div>
 </template>

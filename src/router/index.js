@@ -20,6 +20,10 @@ export default new Router({
     {
       path: '/world/:id',  // 带参路由
       component: World
+    },
+    {
+      path: '/asyn',
+      component: resolve => require(['@/components/Asyn'], resolve)  // 异步加载组件。AMD写法。
     }
   ]
 })

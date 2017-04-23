@@ -5,9 +5,11 @@ import App from './App'         // ./App 是一个单文件组件
 import router from './router'
 import 'element-ui/lib/theme-default/index.css'  // 引入element-ui 的样式
 import ElementUI from 'element-ui'  // 引入 element-ui
+import { AlertPlugin } from 'vux'    // 按需引入 vux 的 插件
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)          // 使用插件
+Vue.use(AlertPlugin)         // 使用插件
 
 /* eslint-disable no-new */
 new Vue({

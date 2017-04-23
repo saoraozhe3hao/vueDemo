@@ -22,14 +22,17 @@
     <!--下级组件容器-->
     <router-view></router-view>
     <!-- 使用element-ui 组件，事件绑定缩写 @click-->
-    <el-button type="primary" @click="elementAlert">Element UI</el-button>
+    <el-button type="primary" @click.native="elementAlert">Element UI</el-button>
+    <!-- 使用VUX 组件，在组件上监听原生事件（非组件自定义事件）要加.native-->
+    <x-button type="primary" mini @click.native="vuxAlert">VUX</x-button>
   </div>
 </template>
 
 <script>
 import Item from './Item'
+import { XButton } from 'vux'  // 按需引入vux的组件
 export default {
-  components: {Item}, // 列举引用的组件
+  components: {Item, XButton}, // 列举引用的组件
   data () {
     return {
       msg: '<span>花括号绑定</span>',
@@ -51,6 +54,16 @@ export default {
         confirmButtonText: '确定',
         callback: action => {
           this.$message({type: 'info', message: `action: ${action}`})
+        }
+      })
+    },
+    vuxAlert () {
+      this.$vux.alert.show({
+        title: 'Vux is Cool',
+        content: 'Do you agree?',
+        onShow () {
+        },
+        onHide () {
         }
       })
     }

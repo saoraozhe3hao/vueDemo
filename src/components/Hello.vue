@@ -97,8 +97,11 @@ export default {
 
   <!-- scoped 使得样式只应用在当前component， 要使用less需安装less 和 less-loader-->
 <style scoped lang="less">
+// 引入less  mixin
+@import '../assets/text-overflow';
 h1, h2 {
   font-weight: normal;
+  .text-overflow();
 }
 
 ul {

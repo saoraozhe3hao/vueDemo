@@ -7,7 +7,7 @@
 .px2rem(@name, @px){
     @{name}: @px / 75 * 1rem;
 }
-// 原型稿px尺寸 转 不同dpr屏幕上的 px尺寸，使得 元素在不同屏幕上显示的视觉大小保持一致
+// 原型稿px尺寸 转 不同dpr屏幕上的 px尺寸，使得 元素在不同屏幕上显示的视觉大小保持一致。用法 ..px2px(font-size, 32)
 .px2px(@name, @px){
     @{name}: round(@px / 2) * 1px;
   [data-dpr="2"] & {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-import World from '@/components/World'
+import Hello from '../components/Hello'
+import World from '../components/World'
 
 Vue.use(Router)
 
@@ -23,7 +23,7 @@ export default new Router({
     },
     {
       path: '/asyn',
-      component: resolve => require(['@/components/Asyn'], resolve)  // 异步加载组件。AMD写法。
+      component: resolve => require(['../components/Asyn'], resolve)  // 异步加载组件。AMD写法。
     }
   ]
 })

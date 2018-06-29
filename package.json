@@ -4,9 +4,9 @@
   "description": "rise vue",
   "main": "index.js",
   "scripts": {
-    "webpack-dev": "webpack --mode development --watch",
-    "webpack-build": "webpack --mode production",
-    "webpack-server": "webpack-dev-server --mode development --inline"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "server": "webpack-dev-server --mode development --inline"
   },
   "author": "Hogen",
   "license": "ISC",

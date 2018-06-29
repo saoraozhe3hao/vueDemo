@@ -9,7 +9,7 @@
 npm install
 
 # serve with hot reload at localhost:8080
-webpack-dev
+npm run dev
 
 # build for production with minification
-webpack-build
+npm run build

@@ -31,7 +31,7 @@ module.exports = {
     resolve: {
         extensions: ['.js','.vue'],
         alias: {
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js'  // 使用完整版的vue
         }
     },
     module: {

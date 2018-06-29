@@ -49,13 +49,13 @@ module.exports = {
                 use: [
                      // 使用这个插件，使得所有less 能被打入一个文件，而不是一个个style
                     MiniCssExtractPlugin.loader,
-                    'css-loader' // 先用css-loader处理css,再用style-loader将css写入<style>标签
+                    'css-loader', 'postcss-loader' // 先用css-loader处理css,再用style-loader将css写入<style>标签
                 ]
             }, {
                 test: /\.less$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader','less-loader'
+                    'css-loader','postcss-loader','less-loader'
                 ]
             }, {
                test: /\.(js)$/,
